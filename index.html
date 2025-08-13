@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open in App Test</title>
+</head>
+<body>
+  <h2>Open in App Test</h2>
+  
+  <!-- Button -->
+  <a href="miamicondo://home" onclick="openApp(); return false;">Open in App</a>
+
+  <script>
+    function openApp() {
+      window.location = 'miamicondo://home';
+      setTimeout(function() {
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        if (isIOS) {
+          window.location = 'https://apps.apple.com/app/id6444061514';
+        } else {
+          window.location = 'https://play.google.com/store/apps/details?id=com.miami.condos';
+        }
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
